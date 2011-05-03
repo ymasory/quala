@@ -2,9 +2,9 @@ package quala
 
 import org.scalatest.FunSuite
 
-class QualaTest extends FunSuite {
+class ScalaTestExample extends FunSuite {
 
-  test("quala dummy test works") {
+  test("Quala dummy test") {
     assert(1 === 1)
 
     expect(1) {
