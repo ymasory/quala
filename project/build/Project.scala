@@ -2,7 +2,8 @@ import sbt._
 
 class Project(info: ProjectInfo) extends DefaultProject(info) {
 
-  shout("configuring with Scala v" + vs)
+  if (log.getLevel == Level.Info)
+    shout("configuring with Scala v" + vs)
 
   val acceptedVersions = List("2.9.0.RC3", "2.8.1")
   if(acceptedVersions contains vs == false)
@@ -29,7 +30,7 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
   }
   
   //turn down logging a bit
-  // log.setLevel(Level.Warn)
+  log.setLevel(Level.Warn)
   log.setTrace(2)
 
   //files to go in packaged jars
