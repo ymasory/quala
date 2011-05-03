@@ -10,7 +10,12 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
 
   //dependencies from built-in repos without binary compatibility issues
   val junit = "junit" % "junit" % "4.8.2"
-  // val scalacheck = "org.scala-tools.testing" % "scalacheck_2.9.0.RC2" % "1.8"
+  val scalacheck = vs match {
+    case "2.8.1" => 
+      "org.scala-tools.testing" %% "scalacheck" % "1.8"
+    case "2.9.0.RC3" =>
+      "org.scala-tools.testing" % "scalacheck_2.9.0.RC2" % "1.8"
+  }
 
   // dependencies from snapshots repo
   val scalaToolsSnapshots = (
@@ -18,11 +23,9 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
     "http://scala-tools.org/repo-snapshots"
   )
 
-  val scalatest = {
-    vs match {
-      case "2.8.1" => "org.scalatest" % "scalatest" % "1.3"
-      case "2.9.0.RC3" => "org.scalatest" %% "scalatest" % "1.4.RC3"
-    }
+  val scalatest = vs match {
+    case "2.8.1" => "org.scalatest" % "scalatest" % "1.3"
+    case "2.9.0.RC3" => "org.scalatest" %% "scalatest" % "1.4.RC3"
   }
   
   //turn down logging a bit
