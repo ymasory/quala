@@ -20,7 +20,7 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
 
   val scalatest = {
     vs match {
-      case "2.8.1" => "org.scalatest" % "scalatest" % "1.4.RC2"
+      case "2.8.1" => "org.scalatest" % "scalatest" % "1.3"
       case "2.9.0.RC3" => "org.scalatest" %% "scalatest" % "1.4.RC3"
     }
   }
