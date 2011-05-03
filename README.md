@@ -1,1 +1,1 @@
-# Quala - A Quality Assurance Project for Scala #
+# Quala - A Quality Assurance Project for the Scala standard library #
