@@ -10,9 +10,9 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
 
   //dependencies from built-in repos without binary compatibility issues
   val junit = "junit" % "junit" % "4.8.2"
-  val scalacheck = "org.scala-tools.testing" % "scalacheck_2.9.0.RC2" % "1.8"
+  // val scalacheck = "org.scala-tools.testing" % "scalacheck_2.9.0.RC2" % "1.8"
 
-  //dependencies from snapshots repo
+  // dependencies from snapshots repo
   val scalaToolsSnapshots = (
     "Scala-Tools Maven2 Snapshots Repository" at
     "http://scala-tools.org/repo-snapshots"
