@@ -4,10 +4,9 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
 
   shout("configuring with Scala v" + vs)
 
-  val acceptedVersions = List("2.8.1", "2.9.0.RC3")
-  if(acceptedVersions.contains(vs) == false) {
+  val acceptedVersions = List("2.9.0.RC3", "2.8.1")
+  if(acceptedVersions contains vs == false)
     throw new RuntimeException("Quala doesn't support Scala " + version)
-  }
 
   //dependencies from built-in repos without binary compatibility issues
   val junit = "junit" % "junit" % "4.8.2"
@@ -21,11 +20,15 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
 
   val scalatest = {
     vs match {
-      case "2.8.1" => "org.scalatest" %% "scalatest" % "1.3.1.RC3"
+      case "2.8.1" => "org.scalatest" % "scalatest" % "1.4.RC2"
       case "2.9.0.RC3" => "org.scalatest" %% "scalatest" % "1.4.RC3"
     }
   }
   
+  //turn down logging a bit
+  // log.setLevel(Level.Warn)
+  log.setTrace(2)
+
   //files to go in packaged jars
   val extraResources = "README.md" +++ "LICENSE"
   override val mainResources = super.mainResources +++ extraResources
@@ -42,5 +45,6 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
     println("Quala: " + msg)
     println(banner)
   }
-  def vs = version.toString
+
+  def vs = crossScalaVersionString
 }
