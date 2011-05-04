@@ -11,6 +11,7 @@ You can contribute tests using ScalaTests, ScalaCheck, Specs, or JUnit. You can 
 
 ### Naming ###
 If you want to write a test for `scala.collection.immutable.List` you should:
+
 * Put it in a file named `src/test/scala/collection/immutable/List.scala`.
 * Put your code in a class/object named `ListTest`.
 * Put `ListTest` in the package `quala.collection.immutable.List`.
