@@ -11,6 +11,8 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
 
   //dependencies from built-in repos
   val junit = "junit" % "junit" % "4.8.2"
+  val junitInterface = "com.novocode" % "junit-interface" % "0.6"
+
   val scalacheck = vs match {
     case "2.8.1" => 
       "org.scala-tools.testing" %% "scalacheck" % "1.8"
@@ -32,6 +34,11 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
     case "2.8.1" => "org.scalatest" % "scalatest" % "1.3"
     case "2.9.0.RC3" => "org.scalatest" %% "scalatest" % "1.4.RC3"
   }
+
+  //junit
+  override def testOptions = 
+    super.testOptions ++ 
+    Seq(TestArgument(TestFrameworks.JUnit, "-q", "-v"))
   
   //turn down logging a bit
   // log.setLevel(Level.Warn)
