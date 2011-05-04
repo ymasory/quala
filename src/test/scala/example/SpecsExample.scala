@@ -1,8 +1,8 @@
 package quala.example
 
-import org.specs._
+import org.specs2.mutable._
 
 class SpecsExample extends Specification {
 
-  "SpecsExamples".size must_== 13
+  "SpecsExamples" must have size(13)
 }

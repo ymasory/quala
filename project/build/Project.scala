@@ -19,9 +19,9 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
     case "2.9.0.RC3" =>
       "org.scala-tools.testing" % "scalacheck_2.9.0.RC2" % "1.8"
   }
-  val specs = vs match {
-    case "2.8.1" => "org.scala-tools.testing" %% "specs" % "1.6.7.2"
-    case "2.9.0.RC3" => "org.scala-tools.testing" % "specs_2.8.1" % "1.6.7.2"
+  val specs2 = vs match {
+    case "2.8.1" => "org.specs2" %% "specs2" % "1.2"
+    case "2.9.0.RC3" => "org.specs2" % "specs2_2.9.0.RC2" % "1.2"
   }
 
   // dependencies from snapshots repo

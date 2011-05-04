@@ -7,7 +7,7 @@
 
 ## Contributing tests ##
 ### Available frameworks ###
-You can contribute tests using ScalaTests, ScalaCheck, Specs, or JUnit. You can see examples of each in `src/test/scala/example`.
+You can contribute tests using ScalaTests, ScalaCheck, Specs2, or JUnit. You can see examples of each in `src/test/scala/example`.
 
 ### Naming ###
 If you want to write a test for `scala.collection.immutable.List` you should:
