@@ -9,13 +9,17 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
   if(acceptedVersions contains vs == false)
     throw new RuntimeException("Quala doesn't support Scala " + version)
 
-  //dependencies from built-in repos without binary compatibility issues
+  //dependencies from built-in repos
   val junit = "junit" % "junit" % "4.8.2"
   val scalacheck = vs match {
     case "2.8.1" => 
       "org.scala-tools.testing" %% "scalacheck" % "1.8"
     case "2.9.0.RC3" =>
       "org.scala-tools.testing" % "scalacheck_2.9.0.RC2" % "1.8"
+  }
+  val specs = vs match {
+    case "2.8.1" => "org.scala-tools.testing" %% "specs" % "1.6.7.2"
+    case "2.9.0.RC3" => "org.scala-tools.testing" % "specs_2.8.1" % "1.6.7.2"
   }
 
   // dependencies from snapshots repo
@@ -30,7 +34,7 @@ class Project(info: ProjectInfo) extends DefaultProject(info) {
   }
   
   //turn down logging a bit
-  log.setLevel(Level.Warn)
+  // log.setLevel(Level.Warn)
   log.setTrace(2)
 
   //files to go in packaged jars
