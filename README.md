@@ -1,4 +1,11 @@
-# Quala - Quality Assurance test suite for the Scala standard library #
+# Quala #
+
+> Same bugs different day.
+
+Quala is a quality assurance test suite for the Scala standard library.
+
+<img src="https://github.com/downloads/quala/quala/quala_square.png" alt="Quala logo" align="right" width="150" />
+
 ## Run tests ##
     cd quala
     sbt
