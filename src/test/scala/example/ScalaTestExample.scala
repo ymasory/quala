@@ -4,7 +4,7 @@ import org.scalatest.FunSuite
 
 class ScalaTestExample extends FunSuite {
 
-  test("Quala dummy test") {
+  test("ScalaTest test") {
     assert(1 === 1)
 
     expect(1) {
