@@ -1,5 +1,7 @@
 package quala.util.parsing.combinator
 
+import quala.epfl
+
 import org.scalacheck._
 
 import scala.util.parsing.combinator._

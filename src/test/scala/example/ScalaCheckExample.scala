@@ -1,4 +1,4 @@
-package quala
+package quala.example
 
 import org.scalacheck._
 
