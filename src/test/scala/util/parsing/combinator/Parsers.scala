@@ -16,4 +16,14 @@ object RegexParsersTest extends Properties("String") with RegexParsers {
       }
     }
   }
+
+  property("`literal` accepts any matching String") = Prop.forAll {
+    a: String => {
+      val literalParser = literal(a)
+      parseAll(literalParser, a) match {
+        case Success(res, _) => res == a
+        case NoSuccess(_, _) => false
+      }
+    }
+  }
 }
