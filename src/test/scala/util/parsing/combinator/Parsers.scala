@@ -8,7 +8,7 @@ import scala.util.parsing.combinator._
 
 object RegexParsersTest extends Properties("String") with RegexParsers {
 
-  lazy val acceptAnyString: Parser[String] = ".*".r
+  lazy val acceptAnyString: Parser[String] = "(?s).*".r
 
   property(acceptAnyString.toString + " accepts all Strings") = Prop.forAll {
     a: String => {
